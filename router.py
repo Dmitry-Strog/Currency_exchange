@@ -1,5 +1,7 @@
+from controller.handler_currencies import CurrenciesHandler
 from controller.handler_currency import CurrencyHandler
 
 routers = {
-    "/currency": CurrencyHandler,
+    "/currency": CurrenciesHandler,
+    "/currency/": CurrencyHandler,
 }

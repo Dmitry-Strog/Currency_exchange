@@ -3,13 +3,13 @@ from dao.dao_currency import DaoCurrency
 
 
 class CurrencyHandler(BaseHandler):
-    def __init__(self, handler):
-        super().__init__(handler)
-        self.dao = DaoCurrency()
+    def __init__(self, code):
+        self.code = code
+        self._dao = DaoCurrency()
 
     def do_GET(self):
-        currency_dicts = [dto.to_dict() for dto in self.dao.get_currencies_all()]
-        self.send(200, currency_dicts)
+        currency_dicts = self._dao.get_currency(self.code).to_dict()
+        return currency_dicts
 
     def do_POST(self):
         pass

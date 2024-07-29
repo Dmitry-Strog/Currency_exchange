@@ -17,22 +17,16 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/base_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/handler_currency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/create_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/currencies_add_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/dao_currency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/dto_currency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exchange.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/handler_currencies.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/base_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/base_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/handler_currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_currency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/dao_currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/dao_currency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +41,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dmitry-Strog&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Dmitry-Strog/Currency_exchange.git&quot;,
+    &quot;accountId&quot;: &quot;dcee92f1-6d9e-4d14-8229-025040d15e00&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -59,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.server.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;
@@ -74,6 +81,7 @@
   <component name="RunManager" selected="Python.server">
     <configuration name="create_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Сurrency_exchange" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -95,6 +103,7 @@
     </configuration>
     <configuration name="currencies_add_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Сurrency_exchange" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -116,6 +125,7 @@
     </configuration>
     <configuration name="dao_currency" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Сurrency_exchange" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -137,6 +147,7 @@
     </configuration>
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Сurrency_exchange" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -170,6 +181,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -180,5 +198,16 @@
       <updated>1721473330667</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
