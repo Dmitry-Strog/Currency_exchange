@@ -1,21 +1,31 @@
 import json
+import urllib.parse
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from router import routers
 
 
 class HTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        if self.path == "/currencies":
+            handler = routers.get("/currencies")
+            code, response = handler().do_GET()
+            self.send(code, response)
 
-        if self.path == "/currency":
-            handler = routers.get("/currency")
-            response = handler().do_GET()
-            self.send(200, response)
-
-        if self.path.startswith("/currency/"):
+        elif self.path.startswith("/currency/"):
             handler = routers.get("/currency/")
             currency_code = self.parse_path(self.path)
-            response = handler(currency_code).do_GET()
-            self.send(200, response)
+            code, response = handler(currency_code).do_GET()
+            self.send(code, response)
+
+    def do_POST(self):
+        if self.path == "/currencies":
+            handler = routers.get("/currencies")
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length).decode('utf-8')
+            data = urllib.parse.parse_qsl(post_data)
+            code, response = handler().do_POST(dict(data))
+            self.send(code, response)
+
 
     def send(self, code, data):
         self.send_response(code)
