@@ -1,12 +1,12 @@
 from controller.base_handler import BaseHandler
-from dao.dao_currency import DaoCurrency
+from dao.currency_dao import CurrencyDao
 from exception import DatabaseUnavailableException, CurrencyCodeMissingError, CurrencyNotFoundError
 
 
 class CurrencyHandler(BaseHandler):
     def __init__(self, code):
         self.code = code
-        self._dao = DaoCurrency()
+        self._dao = CurrencyDao()
 
     def do_GET(self):
         try:

@@ -4,7 +4,7 @@ from dto.dto_currency import CurrencyDTO
 from exception import DatabaseUnavailableException, CurrencyNotFoundError, CurrencyCodeAlreadyExistsError
 
 
-class DaoCurrency:
+class CurrencyDao:
     def get_currencies_all(self):
         """" Получение всех валют из БД """
         try:
@@ -41,4 +41,4 @@ class DaoCurrency:
             raise CurrencyCodeAlreadyExistsError
 
 if __name__ == '__main__':
-    x = DaoCurrency()
+    x = CurrencyDao()

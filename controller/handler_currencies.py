@@ -1,12 +1,12 @@
 from controller.base_handler import BaseHandler
-from dao.dao_currency import DaoCurrency
+from dao.currency_dao import CurrencyDao
 from dto.dto_currency import CurrencyDTO
 from exception import DatabaseUnavailableException, CurrencyCodeAlreadyExistsError, MissingFormField
 
 
 class CurrenciesHandler(BaseHandler):
     def __init__(self):
-        self.dao = DaoCurrency()
+        self.dao = CurrencyDao()
 
     def do_GET(self):
         try:
