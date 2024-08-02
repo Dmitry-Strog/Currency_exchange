@@ -17,8 +17,8 @@ class CreateDb:
             cur.execute(""" CREATE TABLE IF NOT EXISTS currencies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             code VARCHAR(50) NOT NULL UNIQUE,
-            fullname VARCHAR(50) NOT NULL UNIQUE,
-            sign VARCHAR(50) NOT NULL UNIQUE
+            fullname VARCHAR(50) NOT NULL,
+            sign VARCHAR(50) NOT NULL
             )""")
             db.commit()
 
@@ -27,8 +27,8 @@ class CreateDb:
             cur = db.cursor()
             cur.execute(""" CREATE TABLE IF NOT EXISTS exchangerates (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            base_currency_id INTEGER NOT NULL UNIQUE,
-            target_currency_id INTEGER NOT NULL UNIQUE,
+            base_currency_id INTEGER NOT NULL,
+            target_currency_id INTEGER NOT NULL,
             rate DECIMAL(6) NOT NULL,
             FOREIGN KEY (base_currency_id) REFERENCES currencies (id),
             FOREIGN KEY (target_currency_id) REFERENCES currencies (id),

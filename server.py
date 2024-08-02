@@ -16,16 +16,27 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             currency_code = self.parse_path(self.path)
             code, response = handler(currency_code).do_GET()
             self.send(code, response)
+        elif self.path == "/exchangeRates":
+            handler = routers.get("/exchangeRates")
+            code, response = handler().do_GET()
+            self.send(code, response)
 
     def do_POST(self):
         if self.path == "/currencies":
             handler = routers.get("/currencies")
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length).decode('utf-8')
-            data = urllib.parse.parse_qsl(post_data)
+            data = self.parse_post_data()
+            code, response = handler().do_POST(dict(data))
+            self.send(code, response)
+        if self.path == "/exchangeRates":
+            handler = routers.get("/exchangeRates")
+            data = self.parse_post_data()
             code, response = handler().do_POST(dict(data))
             self.send(code, response)
 
+    def parse_post_data(self):
+        content_length = int(self.headers['Content-Length'])
+        post_data = self.rfile.read(content_length).decode('utf-8')
+        return urllib.parse.parse_qsl(post_data)
 
     def send(self, code, data):
         self.send_response(code)

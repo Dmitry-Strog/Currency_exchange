@@ -21,3 +21,8 @@ class CurrencyNotFoundError(Exception):
 class CurrencyCodeAlreadyExistsError(Exception):
     def __init__(self, message="Валюта с таким кодом уже существует"):
         self.message = message
+
+
+class ExchangeCodeAlreadyExistsError(Exception):
+    def __init__(self, message="Валютная пара с таким кодом уже существует"):
+        self.message = message
