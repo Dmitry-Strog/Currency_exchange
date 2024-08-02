@@ -1,12 +1,13 @@
 import sqlite3
 from dto.dto_currency import CurrencyDTO
 from dto.exchange_dto import ExchangeDTO
-from exception import DatabaseUnavailableException, CurrencyNotFoundError, ExchangeCodeAlreadyExistsError
+from exception import DatabaseUnavailableException, CurrencyNotFoundError, ExchangeCodeAlreadyExistsError, \
+    ExchangeRateNotFoundError
 
 
 class ExchangeRatesDAO:
     def get_exchange_all(self):
-        """" Получение всех валютных пар из БД """
+        """" Получение всех обменных курсов """
         with sqlite3.connect('exchange.db') as db:
             cur = db.cursor()
             query = cur.execute("SELECT * FROM exchangerates").fetchall()
@@ -18,7 +19,26 @@ class ExchangeRatesDAO:
                 dto_list.append(ExchangeDTO(id, base_id, target_id, rate))
             return dto_list
 
-
+    def get_exchange(self, data_code: tuple):
+        """" Получение конкретного обменного курса """
+        try:
+            with sqlite3.connect('exchange.db') as db:
+                cur = db.cursor()
+                query = f"""SELECT e.id, e.base_currency_id, e.target_currency_id, e.rate
+                FROM exchangerates e
+                JOIN currencies bc ON e.base_currency_id = bc.id
+                JOIN currencies tc ON e.target_currency_id = tc.id
+                WHERE bc.code = '{data_code[0]}' AND tc.code = '{data_code[1]}'"""
+                result = cur.execute(query).fetchall()
+                id, base_id, target_id, rate = result[0][0], result[0][1], result[0][2], result[0][3],
+                baseCurrency = self.get_currency_by_id(base_id).to_dict()
+                targetCurrency = self.get_currency_by_id(target_id).to_dict()
+                exchange_dto = ExchangeDTO(id, baseCurrency, targetCurrency, rate)
+                return exchange_dto
+        except sqlite3.OperationalError:
+            raise DatabaseUnavailableException
+        except IndexError:
+            raise ExchangeRateNotFoundError
 
     # def save_currency(self, dto: ExchangeDTO):
     #     baseCurrencyCode, targetCurrencyCode, rate = dto.to_dict().values()

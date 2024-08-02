@@ -20,6 +20,11 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             handler = routers.get("/exchangeRates")
             code, response = handler().do_GET()
             self.send(code, response)
+        elif self.path.startswith("/exchangeRate/"):
+            handler = routers.get("/exchangeRate/")
+            currency_code = self.parse_path(self.path)
+            code, response = handler(currency_code).do_GET()
+            self.send(code, response)
 
     def do_POST(self):
         if self.path == "/currencies":

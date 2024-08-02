@@ -1,6 +1,5 @@
 from controller.base_handler import BaseHandler
 from dao.exchange_dao import ExchangeRatesDAO
-from dto.exchange_dto import ExchangeDTO
 from exception import MissingFormField, DatabaseUnavailableException
 
 

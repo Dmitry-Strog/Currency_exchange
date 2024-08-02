@@ -26,3 +26,13 @@ class CurrencyCodeAlreadyExistsError(Exception):
 class ExchangeCodeAlreadyExistsError(Exception):
     def __init__(self, message="Валютная пара с таким кодом уже существует"):
         self.message = message
+
+
+class CurrencyPairMissingError(Exception):
+    def __init__(self, message="Коды валют пары отсутствуют в адресе"):
+        self.message = message
+
+
+class ExchangeRateNotFoundError(Exception):
+    def __init__(self, message="Обменный курс для пары не найден"):
+        self.message = message
