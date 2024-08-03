@@ -1,7 +1,8 @@
 from controller.base_handler import BaseHandler
 from dao.exchange_dao import ExchangeRatesDAO
 from dto.exchange_dto import ExchangeDTO
-from exception import MissingFormField, DatabaseUnavailableException, CurrencyPairMissingError
+from exception import MissingFormField, DatabaseUnavailableException, CurrencyPairMissingError, \
+    ExchangeCodeAlreadyExistsError, CurrencyNotFoundException
 
 
 class ExchangeHandler(BaseHandler):
@@ -27,7 +28,9 @@ class ExchangeHandler(BaseHandler):
             self.dao.save_exchange_currency(dto)
             currency_dicts = self.dao.get_exchange(base_target_code).to_dict()
             return 201, currency_dicts
-        except CurrencyPairMissingError as error:
+        except ExchangeCodeAlreadyExistsError as error:
             return 409, {"message": error.message}
         except MissingFormField as error:
             return 400, {"message": error.message}
+        except CurrencyNotFoundException as error:
+            return 404, {"message": error.message}

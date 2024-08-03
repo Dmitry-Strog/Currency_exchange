@@ -21,7 +21,7 @@ class CurrencyDao:
         try:
             with sqlite3.connect('exchange.db') as db:
                 cur = db.cursor()
-                query = cur.execute(f"SELECT * FROM currencies WHERE code = '{code}'").fetchall()
+                query = cur.execute("SELECT * FROM currencies WHERE code = ?", (code,)).fetchall()
                 currency_dto = CurrencyDTO(query[0][0], query[0][1], query[0][2], query[0][3])
                 return currency_dto
         except sqlite3.OperationalError:

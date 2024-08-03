@@ -1,6 +1,7 @@
 from controller.base_handler import BaseHandler
 from dao.exchange_dao import ExchangeRatesDAO
-from exception import CurrencyPairMissingError, ExchangeRateNotFoundError
+from exception import CurrencyPairMissingError, ExchangeRateNotFoundError, MissingFormField, \
+    CurrencyPairMissingException
 
 
 class ExchangeRateHandler(BaseHandler):
@@ -25,3 +26,16 @@ class ExchangeRateHandler(BaseHandler):
 
     def do_POST(self):
         pass
+
+    def do_PATCH(self, rate):
+        try:
+            base_currency_code = self.code[:3]
+            target_currency_code = self.code[3:]
+            parse_code = base_currency_code, target_currency_code
+            self._dao.update_exchange_rate(parse_code, rate)
+            currency_dicts = self._dao.get_exchange(parse_code).to_dict()
+            return 200, currency_dicts
+        except MissingFormField as error:
+            return 400, {"message": error.message}
+        except CurrencyPairMissingException as error:
+            return 404, {"message": error.message}

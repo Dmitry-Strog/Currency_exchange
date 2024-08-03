@@ -36,3 +36,13 @@ class CurrencyPairMissingError(Exception):
 class ExchangeRateNotFoundError(Exception):
     def __init__(self, message="Обменный курс для пары не найден"):
         self.message = message
+
+
+class CurrencyNotFoundException(Exception):
+    def __init__(self, message="Одна (или обе) валюта из валютной пары не существует в БД"):
+        self.message = message
+
+
+class CurrencyPairMissingException(Exception):
+    def __init__(self, message="Валютная пара отсутствует в базе данных"):
+        self.message = message

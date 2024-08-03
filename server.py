@@ -38,6 +38,14 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             code, response = handler().do_POST(dict(data))
             self.send(code, response)
 
+    def do_PATCH(self):
+        if self.path.startswith("/exchangeRate/"):
+            handler = routers.get("/exchangeRate/")
+            data = self.parse_post_data()
+            currency_code = self.parse_path(self.path)
+            code, response = handler(currency_code).do_PATCH(dict(data))
+            self.send(code, response)
+
     def parse_post_data(self):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length).decode('utf-8')
