@@ -17,16 +17,12 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/handler_exchange_rate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/handler_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_exchange_rates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/handler_exchange_rates.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_exchange_rates.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/exchange_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/exchange_dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dto/exchange_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/dto/exchange_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exchange.db" beforeDir="false" afterPath="$PROJECT_DIR$/exchange.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
