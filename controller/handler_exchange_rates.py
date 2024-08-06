@@ -5,7 +5,7 @@ from exception import MissingFormField, DatabaseUnavailableException, CurrencyPa
     ExchangeCodeAlreadyExistsError, CurrencyNotFoundException
 
 
-class ExchangeHandler(BaseHandler):
+class ExchangeRatesHandler(BaseHandler):
     def __init__(self):
         self.dao = ExchangeRatesDAO()
 

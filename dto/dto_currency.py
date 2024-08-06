@@ -8,7 +8,7 @@ class CurrencyDTO:
     def to_dict(self):
         return {
             'id': self.id,
+            'name': self.fullname,
             'code': self.code,
-            'fullname': self.fullname,
             'sign': self.sign,
         }

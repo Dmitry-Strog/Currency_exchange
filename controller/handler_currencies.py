@@ -18,7 +18,7 @@ class CurrenciesHandler(BaseHandler):
     def do_POST(self, post_data):
         try:
             code = post_data.get('code')
-            fullname = post_data.get('fullname')
+            fullname = post_data.get('name')
             sign = post_data.get('sign')
             if code is None or fullname is None or sign is None:
                 raise MissingFormField

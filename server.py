@@ -25,6 +25,12 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             currency_code = self.parse_path(self.path)
             code, response = handler(currency_code).do_GET()
             self.send(code, response)
+        elif self.path.startswith("/exchange"):
+            handler = routers.get("/exchange")
+            parse_path = urllib.parse.urlparse(self.path)
+            data = dict(urllib.parse.parse_qsl(parse_path.query))
+            code, response = handler(data).do_GET()
+            self.send(code, response)
 
     def do_POST(self):
         if self.path == "/currencies":
@@ -46,6 +52,14 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             code, response = handler(currency_code).do_PATCH(dict(data))
             self.send(code, response)
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Credentials', 'true')
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH')
+        self.send_header("Access-Control-Allow-Headers", "Content-type")
+        self.end_headers()
+
     def parse_post_data(self):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length).decode('utf-8')
@@ -54,6 +68,9 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
     def send(self, code, data):
         self.send_response(code)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.send_header(keyword="Access-Control-Allow-Origin", value='*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH')
+        self.send_header(keyword='Access-Control-Allow-Headers', value='Content-Type')
         self.end_headers()
         response = json.dumps(data, indent=4, ensure_ascii=False)
         self.wfile.write(response.encode('utf-8'))
