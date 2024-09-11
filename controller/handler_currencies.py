@@ -1,6 +1,6 @@
 from controller.base_handler import BaseHandler
 from dao.currency_dao import CurrencyDao
-from dto.dto_currency import CurrencyDTO
+from dto.currency_dto import CurrencyDTO
 from exception import DatabaseUnavailableException, CurrencyCodeAlreadyExistsError, MissingFormField
 
 

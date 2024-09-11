@@ -25,7 +25,7 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             currency_code = self.parse_path(self.path)
             code, response = handler(currency_code).do_GET()
             self.send(code, response)
-        elif self.path.startswith("/exchange"):
+        elif self.path.startswith("/exchange?"):
             handler = routers.get("/exchange")
             parse_path = urllib.parse.urlparse(self.path)
             data = dict(urllib.parse.parse_qsl(parse_path.query))

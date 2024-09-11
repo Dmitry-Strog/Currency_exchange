@@ -17,16 +17,17 @@
       <change afterPath="$PROJECT_DIR$/../Simulation/map/coordinate.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/map/map.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Simulation/simulations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/handler_exchange.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/service_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/exchange_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hangman" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik_womensite/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/handler_currencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_currencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/handler_exchange_rates.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_exchange_rates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dto/dto_currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/dto/dto_currency.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/handler_exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_exchange.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/handler_exchange_rate.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/handler_exchange_rate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/currency_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/currency_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/exchange_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/exchange_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/dto_currency.py" beforeDir="false" afterPath="$PROJECT_DIR$/dto/currency_dto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exchange.db" beforeDir="false" afterPath="$PROJECT_DIR$/exchange.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

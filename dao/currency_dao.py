@@ -1,6 +1,6 @@
 import sqlite3
 
-from dto.dto_currency import CurrencyDTO
+from dto.currency_dto import CurrencyDTO
 from exception import DatabaseUnavailableException, CurrencyNotFoundError, CurrencyCodeAlreadyExistsError
 
 

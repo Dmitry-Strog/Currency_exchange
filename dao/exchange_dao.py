@@ -1,5 +1,5 @@
 import sqlite3
-from dto.dto_currency import CurrencyDTO
+from dto.currency_dto import CurrencyDTO
 from dto.exchange_dto import ExchangeDTO
 from exception import *
 
@@ -29,15 +29,14 @@ class ExchangeRatesDAO:
                 JOIN currencies tc ON e.target_currency_id = tc.id
                 WHERE bc.code = ? AND tc.code = ?"""
                 result = cur.execute(query, data_code).fetchall()
-                id, base_id, target_id, rate = result[0][0], result[0][1], result[0][2], result[0][3],
-                baseCurrency = self.get_currency_by_id(base_id).to_dict()
-                targetCurrency = self.get_currency_by_id(target_id).to_dict()
-                exchange_dto = ExchangeDTO(id, baseCurrency, targetCurrency, rate)
-                return exchange_dto
+                if result:
+                    id, base_id, target_id, rate = result[0][0], result[0][1], result[0][2], result[0][3],
+                    baseCurrency = self.get_currency_by_id(base_id).to_dict()
+                    targetCurrency = self.get_currency_by_id(target_id).to_dict()
+                    exchange_dto = ExchangeDTO(id, baseCurrency, targetCurrency, rate)
+                    return exchange_dto
         except sqlite3.OperationalError:
             raise DatabaseUnavailableException
-        except IndexError:
-            raise ExchangeRateNotFoundError
 
     def save_exchange_currency(self, dto: ExchangeDTO):
         try:
